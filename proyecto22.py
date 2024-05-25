@@ -131,15 +131,11 @@ def armarKatamino(katamino, piezas):
 katamino_resuelto=armarKatamino(katamino, matriz_piezas)
 def result(matriz_piezas,L,A):
     if katamino_resuelto:
-    	t1=time.time()
-    	print(t1-t0)
         return print_b(katamino_resuelto)
     if contar_caracteres(matriz_piezas) != L*A:
-    	t1=time.time()
-    	print(t1-t0)
         print_b(sadkataminito)
     else:
-    	t1=time.time()
-    	print(t1-t0)
         print_b(sadkataminito)
 result(matriz_piezas,L,A)
+t1=time.time()
+print(t1-t0)
