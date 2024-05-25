@@ -75,7 +75,6 @@ def todas_rotaciones(pieza):
         rotaciones.append(rotar(rotaciones[-1]))
     return rotaciones
 
-total_rotaciones=[todas_rotaciones(pieza) for pieza in matriz_piezas]
 sadkataminito=kataminoi(L, A)
 katamino=kataminoi(L, A)
 
