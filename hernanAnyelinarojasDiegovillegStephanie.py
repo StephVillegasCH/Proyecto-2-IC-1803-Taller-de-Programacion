@@ -123,7 +123,6 @@ def armarKatamino(katamino, piezas):
     resultado = DFS(katamino, piezas)
     return resultado if resultado else False
 
-katamino_resuelto=armarKatamino(katamino, matriz_piezas)
 def result(matriz_piezas,L,A):
     if contar_caracteres(matriz_piezas)!=L*A:
         print_b(sadkataminito)
