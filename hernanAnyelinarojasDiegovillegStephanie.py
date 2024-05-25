@@ -8,8 +8,8 @@ def kataminoi(L, A):
     return [["."]*A for _ in range(L)]
 
 def contar_caracteres(matriz):
+    contador=0
     for pieza in matriz:
-        contador=0
         for i in range(len(pieza)):
             for j in range(len(pieza[0])):
                 if pieza[i][j] != ".":
@@ -107,8 +107,8 @@ def copiar(visitados):
     return visitados[:]
     
 def DFS(katamino, matriz_piezas):
-    if len(matriz_piezas)==0 and katamino_completo(katamino):
-        return katamino
+    if len(matriz_piezas)==0:
+        return katamino if katamino_completo(katamino) else None
     pieza_actual = matriz_piezas[0]
     piezas_restantes = matriz_piezas[1:]
     for rotacion in todas_rotaciones(pieza_actual):
@@ -128,10 +128,12 @@ def armarKatamino(katamino, piezas):
 
 katamino_resuelto=armarKatamino(katamino, matriz_piezas)
 def result(matriz_piezas,L,A):
-    if katamino_resuelto:
-        return print_b(katamino_resuelto)
-    if contar_caracteres(matriz_piezas) != L*A:
+    if contar_caracteres(matriz_piezas)!=L*A:
         print_b(sadkataminito)
     else:
-        print_b(sadkataminito)
+        katamino_resuelto=armarKatamino(katamino,matriz_piezas)
+        if katamino_resuelto:
+            print_b(katamino_resuelto)
+        else:
+            print_b(sadkataminito)
 result(matriz_piezas,L,A)
