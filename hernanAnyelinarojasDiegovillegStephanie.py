@@ -102,9 +102,6 @@ def colocar_pieza(katamino, pieza, fila_inicio, columna_inicio):
 
 def copiarKatamino(katamino):
     return [fila[:] for fila in katamino]
-
-def copiar(visitados):
-    return visitados[:]
     
 def DFS(katamino, matriz_piezas):
     if len(matriz_piezas)==0:
